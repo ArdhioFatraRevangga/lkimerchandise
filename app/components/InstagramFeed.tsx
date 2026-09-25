@@ -2,25 +2,23 @@
 
 import { useState, useEffect } from 'react';
 
-// Sub-komponen yang telah dikemas kini dengan fungsi auto-flip untuk HP
+// Sub-komponen dikembalikan ke mode normal (Front & Back flip)
 function ProductCard({ product }: { product: any }) {
   const [isHovered, setIsHovered] = useState(false);
   const [autoFlip, setAutoFlip] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Semak saiz skrin untuk mengesan sama ada ia peranti mudah alih (HP)
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // 768px adalah had biasa untuk tablet/HP
+      setIsMobile(window.innerWidth < 768); 
     };
 
-    checkMobile(); // Semak semasa komponen dimuatkan
+    checkMobile(); 
     window.addEventListener('resize', checkMobile);
 
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Jalankan timer 1 saat (1000ms) HANYA jika ia dibuka di HP
   useEffect(() => {
     let interval: NodeJS.Timeout;
     
@@ -35,8 +33,6 @@ function ProductCard({ product }: { product: any }) {
     };
   }, [isMobile]);
 
-  // Logik pertukaran gambar: 
-  // Jika di HP, guna 'autoFlip'. Jika di PC, guna 'isHovered'
   const showBackImage = isMobile ? autoFlip : isHovered;
 
   return (
@@ -60,22 +56,21 @@ function ProductCard({ product }: { product: any }) {
   );
 }
 
-// ... (Bahagian export default function ProductGrid() di bawahnya kekal sama seperti sebelum ini) ...
 export default function ProductGrid() {
-  // Data Produk Baris 1: T-SHIRT (Path gambar diperbarui)
+  // Data Produk Baris 1: T-SHIRT (Kotak ke-3 dikembalikan normal)
   const tshirts = [
     { id: 1, name: "BUNNY", price: "Rp 0", imageFront: '/assets/TS_BUNNY_DST.png', imageBack: '/assets/TS_BUNNY_GRY.png' },
     { id: 2, name: "CLIGHTER", price: "Rp 0", imageFront: '/assets/TS_CLIGHTER.png', imageBack: '/assets/LS_CLIGHTER.png' },
-    { id: 3, name: "NACH", price: "Rp 0", imageFront: '/assets/TS_BUNNY_DST.png', imageBack: '/assets/TS_BUNNY_GRY.png' },
-    { id: 4, name: "BUNNY DST", price: "Rp 0", imageFront: '/assets/TS_BUNNY_DST.png', imageBack: '/assets/TS_BUNNY_GRY.png' },
+    { id: 3, name: "GUND", price: "Rp 0", imageFront: '/assets/LS-GUND-BLCK.png', imageBack: '/assets/LS-GUND-WHT.png' }, // <- Ubah path gambar ini nanti sesuai desain GUND
+    { id: 4, name: "MUSC", price: "Rp 0", imageFront: '/assets/TS-MUSC.png', imageBack: '/assets/LS-MUSC.png' },
   ];
 
-  // Data Produk Baris 2: JERSEY (Path gambar diperbarui)
+  // Data Produk Baris 2: JERSEY
   const jerseys = [
-    { id: 5, name: "JERSEY 01", price: "Rp 0", imageFront: '/assets/TS_BUNNY_DST.png', imageBack: '/assets/TS_BUNNY_GRY.png' },
-    { id: 6, name: "JERSEY 02", price: "Rp 0", imageFront: '/assets/TS_BUNNY_DST.png', imageBack: '/assets/TS_BUNNY_GRY.png' },
-    { id: 7, name: "JERSEY 03", price: "Rp 0", imageFront: '/assets/TS_BUNNY_DST.png', imageBack: '/assets/TS_BUNNY_GRY.png' },
-    { id: 8, name: "JERSEY 04", price: "Rp 0", imageFront: '/assets/TS_BUNNY_DST.png', imageBack: '/assets/TS_BUNNY_GRY.png' },
+    { id: 5, name: "JERSEY LEGACY", price: "Rp 0", imageFront: '/assets/JS-LEGACY.png', imageBack: '/assets/model-LEGACY.png' },
+    { id: 6, name: "JERSEY CLIGHTER", price: "Rp 0", imageFront: '/assets/JS-CLIGHTER.png', imageBack: '/assets/model-js-CLIGHTER.png' },
+    { id: 7, name: "JERSEY DEER", price: "Rp 0", imageFront: '/assets/JS-DEER.png', imageBack: '/assets/model-js-DEER.png' },
+    { id: 8, name: "JERSEY SHIELD", price: "Rp 0", imageFront: '/assets/JS-SHIELD.png', imageBack: '/assets/model-js-SHIELD.png' },
   ];
 
   return (
