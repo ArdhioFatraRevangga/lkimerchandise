@@ -24,7 +24,6 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="mt-3 inline-flex items-center justify-start gap-4 bg-black text-white text-xs md:text-sm px-6 py-3 rounded-xl hover:bg-gray-800 transition shadow w-full max-w-md"
           >
-            {/* Hapus 'filter invert' jika gambar aslinya sudah berwarna terang/putih */}
             <img src="/assets/wa.png" alt="WhatsApp" className="w-6 h-6 object-contain flex-shrink-0" />
             <span style={{ fontFamily: "'Jacques Francois Shadow', serif" }} className="tracking-wide text-sm md:text-base flex-grow text-center">
               HUBUNGI CUSTOMER SUPPORT KAMI
@@ -74,12 +73,26 @@ export default function Contact() {
 
       </div>
 
-      {/* 4 Kotak Abu-abu Estetik di Bawah */}
-      <div className="max-w-5xl mx-auto px-6 mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-gray-200 h-36 rounded-xl shadow-inner animate-pulse"></div>
-        <div className="bg-gray-200 h-36 rounded-xl shadow-inner animate-pulse"></div>
-        <div className="bg-gray-200 h-36 rounded-xl shadow-inner animate-pulse"></div>
-        <div className="bg-gray-200 h-36 rounded-xl shadow-inner animate-pulse"></div>
+      {/* 4 Kotak Gambar (Disamakan dengan How To Order) */}
+      <div className="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16">
+        <div className="h-40 md:h-56 rounded-xl overflow-hidden shadow flex items-center justify-center bg-gray-50">
+          <img src="/assets/PROFIL-SOSMED-ALL.png" alt="Profil Sosmed" className="w-full h-full object-cover" />
+        </div>
+        <div className="h-40 md:h-56 rounded-xl overflow-hidden shadow flex items-center justify-center bg-white p-4">
+          <img src="/assets/legacy-hitam.png" alt="Legacy Hitam" className="w-full h-full object-contain" />
+        </div>
+        <div className="h-40 md:h-56 rounded-xl overflow-hidden shadow flex items-center justify-center bg-white p-4">
+          <img src="/assets/keep-Inspiring.png" alt="Keep Inspiring" className="w-full h-full object-contain" />
+        </div>
+        <div className="h-40 md:h-56 rounded-xl overflow-hidden shadow flex items-center justify-center bg-gray-50">
+          <img src="/assets/banner-sosmed.png" alt="Banner Sosmed" className="w-full h-full object-cover" />
+        </div>
+        {/* <div className="h-40 md:h-56 rounded-xl overflow-hidden shadow flex items-center justify-center bg-white p-4">
+          <img src="/assets/legacy-hitam.png" alt="Legacy Hitam" className="w-full h-full object-contain" />
+        </div>
+        <div className="h-40 md:h-56 rounded-xl overflow-hidden shadow flex items-center justify-center bg-white p-4">
+          <img src="/assets/keep Inspiring.png" alt="Keep Inspiring" className="w-full h-full object-contain" />
+        </div> */}
       </div>
 
     </section>
