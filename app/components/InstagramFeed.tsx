@@ -104,6 +104,13 @@ export default function ProductGrid() {
         </div>
       </div>
 
+      {/* --- Teks Informasi Tambahan di Bawah Grid Produk --- */}
+      <div className="mt-12 text-center w-full">
+        <p className="text-gray-600 text-sm md:text-base italic font-medium tracking-wide">
+          *Silahkan hubungi CS kami untuk design baju yang anda inginkan
+        </p>
+      </div>
+
     </section>
   );
 }

@@ -18,7 +18,7 @@ export default function HowToOrder() {
 
             <ol className="list-decimal list-inside space-y-3 text-gray-700 text-sm md:text-base leading-relaxed mb-8">
               <li>Lihat produk yang anda inginkan</li>
-              <li>Hubungi Customer Support kami untuk melanjutkan pemesanan</li>
+              <li>Hubungi Customer Support kami melalui halaman "Contact us" untuk melanjutkan pemesanan</li>
               <li>Anda bisa menambahkan jumlah sesuai dengan yang diinginkan</li>
               <li>Sesuaikan ukuran produk dengan anda</li>
               <li>Lanjutkan ke pembayaran melalui customer support</li>
